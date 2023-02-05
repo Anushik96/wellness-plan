@@ -8,17 +8,23 @@
           @keyup.enter="editActivity"
         >
       <div class="flex items-center gap-10">
-       <div v-if="activity?.status == 'complated'" class="flex gap-2">
-          <img src="../assets/icones/completed.svg" alt="">
-          <p class="text-green-400">Complated</p>
+       <div
+          v-if="activity?.status == 'complated'" 
+          class="flex gap-2">
+            <img src="../assets/icones/completed.svg" alt="">
+            <p class="text-green-400">Complated</p>
        </div> 
-       <div v-if="activity?.status == 'booked'" class="flex gap-2">
-          <img src="../assets/icones/calendar.svg" alt="">
-          <p class="text-blue-800">Booked</p>
+       <div 
+          v-if="activity?.status == 'booked'" 
+          class="flex gap-2">
+            <img src="../assets/icones/calendar.svg" alt="">
+            <p class="text-blue-800">Booked</p>
        </div> 
-        <div v-if="activity?.status == 'book'" class="flex gap-2">
-          <img src="../assets/icones/calendar-light.svg" alt="">
-          <p class="text-blue-300">Book Now</p>
+        <div
+          v-if="activity?.status == 'book'" 
+          class="flex gap-2">
+            <img src="../assets/icones/calendar-light.svg" alt="">
+            <p class="text-blue-300">Book Now</p>
        </div> 
        <div 
             class="relative inline-block"

@@ -18,7 +18,9 @@
             leave-to-class="translate-y-[-150%] opacity-0"
             enter-active-class="transition duration-500"
             leave-active-class="transition duration-500">
-            <div v-show="isVisible"  class="lg:flex gap-10 p-5 justify-around">
+            <div 
+                v-show="isVisible"  
+                class="lg:flex gap-10 p-5 justify-around">
                     <DoughnutChart
                         v-if="activities.length"
                         :activities="activities"
@@ -94,6 +96,7 @@
         async getActivities() {
             this.activities = await store.dispatch('getActivitiesList'); 
         },
+        
         async getCalendar() {
            this.calendar = await store.dispatch('getCalendarData'); 
         },
@@ -106,6 +109,7 @@
         async editActivity(data: object){            
             this.activities = await store.dispatch('editActivity', data);
         },
+
         getCountOfCmplated(){
             return this.activities.filter(e => e.status === 'complated').length
         }

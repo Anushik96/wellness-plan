@@ -21,24 +21,30 @@
     },
     {
         id: 3,
-        name: 'NAD',
+        name: 'Hormone replacement therapy',
         status: 'complated',
         date: new Date('2023-03-25')
     },
     {
         id: 4,
+        name: 'NAD',
+        status: 'complated',
+        date: new Date('2023-03-25')
+    },
+    {
+        id: 5,
         name: 'Hormone replacement terapy',
         status: 'booked',    
         date: new Date('2023-01-25')
     },
     {
-        id: 5,
+        id: 6,
         name: 'Hormone replacement terapy',
         status: 'booked',   
         date: new Date('2023-01-25')
     },
     {
-        id: 6,
+        id: 7,
         name: 'Hormone replacement terapy',
         status: 'book',
         date: new Date('2023-08-25')

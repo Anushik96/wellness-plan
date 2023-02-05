@@ -3,15 +3,14 @@
         <div class="w-1/2 lg:w-full mx-auto relative">
           <p class="percentage">{{ getPercentage() + '%' }}</p>
           <vue3-chart-js
+            ref="chartRef"
             :width="200"
             :height="200"
-            ref="chartRef"
             :id="doughnutChart.id"
             :type="doughnutChart.type"
             :data="chartData" 
         ></vue3-chart-js>
         </div>
-        
         <p class="text-gray-500 text-center text-[14px] my-5">Completed <br/>appointment</p>
     </div>
   </template>
@@ -38,12 +37,12 @@
           type: 'doughnut',
         },
       }
-    },
+    },   
 
     computed:{
       chartData(){
         return {
-          datasets: [{
+          datasets: [{ 
             backgroundColor:(ctx) => {
               const canvas = ctx.chart.ctx;
               const gradient = canvas.createLinearGradient(0,50,100,0);
@@ -68,7 +67,7 @@
           return this.activities.filter(e => e.status === 'booked').length
       },
       getPercentage(){
-        const sum = this.complated() + this.booked();
+        const sum = this.complated() + this.booked(); 
         return ((this.complated() / sum) * 100).toFixed(0)
       }
     },
@@ -77,7 +76,6 @@
       'chartData': {
         handler() { 
           this.$refs.chartRef.data.datasets[0].data = [this.complated(), this.booked()];
-          console.log(this.$refs.chartRef.data.datasets[0], 'fsdfd');
           this.$refs.chartRef.update();
         },
         deep: true
